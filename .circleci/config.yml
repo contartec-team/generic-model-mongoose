@@ -165,4 +165,4 @@ workflows:
           context:
             - github
           requires:
-            - approval
+            - tests
