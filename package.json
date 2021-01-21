@@ -1,5 +1,5 @@
 {
-  "name": "@contartec/generic-model",
+  "name": "@contartec-team/generic-model-mongoose",
   "version": "0.2.0",
   "description": "",
   "main": "",
@@ -20,7 +20,9 @@
     "test": "cross-env NODE_ENV=test npm run lint && npm run test:coverage",
     "test:watch": "cross-env NODE_ENV=test npm run lint && npm run mocha -- --watch",
     "test:coverage": "cross-env NODE_ENV=test nyc --reporter=text-summary --reporter=lcov --reporter=cobertura --report-dir=./coverage --reporter=html npm run mocha --reporter=min",
-    "update:docs": "npm run docs && git add docs/. && git diff-index --quiet HEAD || git commit -m 'Updating `docs`'"
+    "update:docs": "npm run docs && git add docs/. && git diff-index --quiet HEAD || git commit -m 'Updating `docs`'",
+    "update-version": "node -e 'require(\"@contartec-team/version-release\").updateVersion()'",
+    "release-version": "node -e 'require(\"@contartec-team/version-release\").releaseVersion()'"
   },
   "repository": {
     "type": "git",
@@ -47,6 +49,8 @@
     "addresses": "./tests/addresses"
   },
   "devDependencies": {
+    "@contartec-team/version-release": "^0.1.0",
+    "@contartec-team/git-hooks": "git+https://github.com/contartec-team/git-hooks.git",
     "cross-env": "^5.2.0",
     "documentation": "^11.0.0",
     "eslint": "^5.16.0",
@@ -67,7 +71,7 @@
     "bluebird": "^3.7.0",
     "dotenv": "^6.0.0",
     "mongodb": "^3.1.6",
-    "mongoose": "5.7.7",
+    "mongoose": "^5.9.19",
     "mongoose-lifecycle": "^1.0.0",
     "redis": "^2.8.0",
     "redis-rejson": "^1.0.0"
