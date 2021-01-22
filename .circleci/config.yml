@@ -2,7 +2,7 @@ version: 2
 
 jobs:
   checkout_code:
-    working_directory: /home/circleci/generic-model
+    working_directory: /home/circleci/generic-model-mongoose
 
     docker:
       - image: circleci/node:12
@@ -16,7 +16,7 @@ jobs:
             - ./
 
   node_dependencies:
-    working_directory: /home/circleci/generic-model
+    working_directory: /home/circleci/generic-model-mongoose
 
     docker:
       - image: circleci/node:12
@@ -42,7 +42,7 @@ jobs:
             - ./node_modules
 
   tests:
-    working_directory: /home/circleci/generic-model
+    working_directory: /home/circleci/generic-model-mongoose
 
     docker:
       - image: circleci/node:12
