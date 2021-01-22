@@ -1,16 +1,16 @@
-# GenericModel
+# Generic model for [`mongoose` ODM](https://mongoosejs.com/)
 
-[![CircleCI](https://circleci.com/gh/contartec/generic-model.svg?style=shield&circle-token=d612e4b4186e0e54cd8bff326e891c277b3fdb36)](https://circleci.com/gh/contartec/generic-model)
-[![Maintainability](https://api.codeclimate.com/v1/badges/4947cbae75df68640f95/maintainability)](https://codeclimate.com/github/contartec/generic-model/maintainability)
-[![Test Coverage](https://api.codeclimate.com/v1/badges/4947cbae75df68640f95/test_coverage)](https://codeclimate.com/github/contartec/generic-model/test_coverage)
-[![npm version](https://badge.fury.io/js/%40contartec%2Fgeneric-model.svg)](https://badge.fury.io/js/%40contartec%2Fgeneric-model)
+[![CircleCI](https://circleci.com/gh/contartec-team/generic-model-mongoose.svg?style=shield&circle-token=875a364c004186da2818e543a701cde959d44f13)](https://circleci.com/gh/contartec/generic-model)
+[![Maintainability](https://api.codeclimate.com/v1/badges/e4a746d3606b730d6c86/maintainability)](https://codeclimate.com/github/contartec-team/generic-model-mongoose/maintainability)
+[![deepcode](https://www.deepcode.ai/api/gh/badge?key=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwbGF0Zm9ybTEiOiJnaCIsIm93bmVyMSI6ImNvbnRhcnRlYy10ZWFtIiwicmVwbzEiOiJnZW5lcmljLW1vZGVsLW1vbmdvb3NlIiwiaW5jbHVkZUxpbnQiOmZhbHNlLCJhdXRob3JJZCI6MTczMjgsImlhdCI6MTYxMTI3MTU5NH0.ZJJBGlW8Wtb-yYX728CEVBQnfiN_KUQA6O3eFPkebOw)](https://www.deepcode.ai/app/gh/contartec-team/generic-model-mongoose/_/dashboard?utm_content=gh%2Fcontartec-team%2Fgeneric-model-mongoose)
+[![codecov](https://codecov.io/gh/contartec-team/generic-model-mongoose/branch/master/graph/badge.svg?token=rtQrqPhWJC)](https://codecov.io/gh/contartec-team/generic-model-mongoose)
 
-A set of (simple?) generic model classes
+A set of generic model methods to inherit
 
 ## Install
 
-`npm i @contart/generic-model`
+`npm i @contartec-team/generic-model-mongoose`
 
 ## Docs
 
-https://contartec.github.io/generic-model/
+https://contartec-team.github.io/generic-model-mongoose/
