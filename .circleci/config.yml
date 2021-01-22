@@ -37,7 +37,7 @@ jobs:
           command : npm install
 
       - save_cache:
-          key   : node-cache-{{ .Branch }}-{{ checksum "package.json" }}
+          key   : node-cache-{{ .Environment.CACHE_VERSION }}-{{ .Branch }}-{{ checksum "package.json" }}
           paths :
             - ./node_modules
 
