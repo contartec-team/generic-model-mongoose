@@ -24,25 +24,29 @@
     "update-version": "node -e 'require(\"@contartec-team/version-release\").updateVersion()'",
     "release-version": "node -e 'require(\"@contartec-team/version-release\").releaseVersion()'"
   },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
   "repository": {
     "type": "git",
-    "url": "git+https://contartec@github.com/contartec/generic-model.git"
+    "url": "git+https://contartec-team@github.com/contartec-team/generic-model-mongoose.git"
   },
   "keywords": [
     "node",
     "js",
-    "object",
-    "utils",
-    "copy",
-    "parse",
-    "string"
+    "generic",
+    "model",
+    "mongoose",
+    "mongo",
+    "odm",
+    "odr"
   ],
   "author": "contartec",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/contartec/generic-model/issues"
+    "url": "https://github.com/contartec-team/generic-model-mongoose/issues"
   },
-  "homepage": "https://github.com/contartec/generic-model#readme",
+  "homepage": "https://github.com/contartec-team/generic-model-mongoose#readme",
   "_moduleAliases": {
     "lib": "./lib",
     "tests": "./tests",
