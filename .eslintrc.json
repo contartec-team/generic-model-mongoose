@@ -15,11 +15,12 @@
     "sinon": true
   },
   "rules": {
-    "eqeqeq": 0,
-    "valid-jsdoc": "error",
+    "eqeqeq": "off",
     "keyword-spacing": "error",
-    "no-unexpected-multiline": 0,
-    "quotes": [2, "single", {"allowTemplateLiterals": true}],
+    "quotes": ["error", "single", { "allowTemplateLiterals": true }],
+    "require-yield": "error",
+    "require-await": "error",
+    "no-unexpected-multiline": "off",
     "indent": [
       "error",
       2,
@@ -39,7 +40,25 @@
     ],
     "no-console": [
       2,
-      {"allow": ["warn", "error"]}
+      { "allow": ["warn", "error"] }
+    ],
+    "prefer-const": [
+      "error",
+      {
+        "destructuring": "any",
+        "ignoreReadBeforeAssign": false
+      }
+    ],
+    "arrow-parens": [
+      2,
+      "as-needed"
+    ],
+    "require-jsdoc": ["error"],
+    "valid-jsdoc": [
+      "error",
+      {
+        "requireParamDescription": false
+      }
     ]
   }
 }
