@@ -4,33 +4,7 @@ const mongoose = require('mongoose')
 
 const genericSchema = require('lib/models/genericSchema')
 
-const REQUIRED = { required: true }
-
-const STRING_REQUIRED = {
-  ...REQUIRED,
-  type: String
-}
-
-const SCHEMA = {
-  street_name       : STRING_REQUIRED,
-  street_number     : String,
-  postal_code       : String,
-  neighborhood      : String,
-  city              : STRING_REQUIRED,
-  state             : STRING_REQUIRED,
-  state_short       : String,
-  country           : STRING_REQUIRED,
-  country_short     : String,
-  formatted_address : STRING_REQUIRED,
-  google_place_id   : String,
-  geometry          : {},
-  location          : [],
-  is_bus_station    : {
-    type    : Boolean,
-    default : false
-  },
-  types             : []
-}
+const SCHEMA = require('../schemas/AddressSchema')
 
 const OPTIONS = {
   _id         : true,
@@ -45,7 +19,7 @@ const { GenericModel, GenericSchema } = genericSchema(SCHEMA, OPTIONS)
 
 /**
  * The `max distance` (in `meters`) between the `lat/lng` and the (assumed by us) `nearest` `address`
- * 
+ *
  * @type {Number}
  * @constant
 */
@@ -53,7 +27,7 @@ const MAX_DISTANCE = process.env.MAX_DISTANCE || 20
 
 /**
  * The list of `addresses`' types related with `bus station`
- * 
+ *
  * @type {Array}
  * @constant
 */
@@ -61,10 +35,10 @@ const ADDRESS_BUS_STATION_TYPES = ['bus_station', 'transit_station']
 
 /**
  * Represents the `Address` model in `db`
- * 
+ *
  * @class Address
  * @extends {GenericModel}
- * 
+ *
  * @property {string} street_name
  * @property {string} street_number
  * @property {string} postal_code
@@ -88,7 +62,7 @@ class Address extends GenericModel {
 
   /**
    * Returns whether the `address` is a `bus station` or not
-   * 
+   *
    * @return {Boolean} Whether the `address` is a `bus station` or not
   */
   isBusStation() {
@@ -97,7 +71,7 @@ class Address extends GenericModel {
 
   /**
    * Sets the `is_bus_station` attr based on its `types`
-   * 
+   *
    * @return {Address} `this`
   */
   setIsBusStation() {
@@ -120,11 +94,11 @@ class Address extends GenericModel {
   /**
    * Returns the `nearest` `adress` given a `lat/lng` inside a `radius`
    * @async
-   * 
+   *
    * @param {Array<Number> | Number} latitude The `position` (`[ lat, lng ]`) or the `latitude`
    * @param {Number} longitude The `longitude` or `radius` if `latitude` is an `Array`
    * @param {Number} [radius = MAX_DISTANCE] The `radius` in `meters` (default [`MAX_DISTANCE`]{@link MAX_DISTANCE})
-   * 
+   *
    * @return {Promise<Address>} The nearest `adress`
   */
   static getNearest(latitude, longitude, radius = MAX_DISTANCE) {
@@ -144,11 +118,11 @@ class Address extends GenericModel {
 
   /**
    * Returns the `nearest` params
-   * 
+   *
    * @param {Array<Number> | Number} latitude The `position` (`[ lat, lng ]`) or the `latitude`
    * @param {Number} longitude The `longitude` or `radius` if `latitude` is an `Array`
    * @param {Number} [radius = MAX_DISTANCE] The `radius` in `meters` (default [`MAX_DISTANCE`]{@link MAX_DISTANCE})
-   * 
+   *
    * @return {Object} The `nearest` params
   */
   static getNearestParams(latitude, longitude, radius = MAX_DISTANCE) {
@@ -167,9 +141,9 @@ class Address extends GenericModel {
 
   /**
    * Returns whether the `address` is a `bus station` or not
-   * 
+   *
    * @param {(Address | Object)} address The `address` object
-   * 
+   *
    * @return {Boolean} Whether the `address` is a `bus station` or not
   */
   static isBusStation(address) {
