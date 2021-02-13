@@ -27,7 +27,7 @@ describe('Address', () => {
     context('when `address` is invalid', () => {
       let address, expectionFunction
 
-      before(async () => {
+      before(() => {
         address = AddressMock
           .getMock({
             street_name: null
@@ -100,7 +100,7 @@ describe('Address', () => {
   describe('#setLocation', () => {
     context('when address has `geometry` attr', () => {
       const LOCATION = [ -8.00194, -34.8731 ]
-      
+
       let address
 
       before(() => {
@@ -194,7 +194,7 @@ describe('Address', () => {
         addresses = await Address
           .find(DEFAULT_PARAMS)
 
-        DEFAULT_PARAMS = { 
+        DEFAULT_PARAMS = {
           country_short: COUNTRY_SHORT
         }
       })
@@ -258,7 +258,7 @@ describe('Address', () => {
             country_short: COUNTRY_SHORT
           })
 
-        DEFAULT_PARAMS = { 
+        DEFAULT_PARAMS = {
           counttry: COUNTRY_SHORT
         }
       })
@@ -291,7 +291,7 @@ describe('Address', () => {
             country_short: COUNTRY_SHORT
           })
 
-        DEFAULT_PARAMS = { 
+        DEFAULT_PARAMS = {
           country_short: COUNTRY_SHORT
         }
       })
@@ -462,7 +462,7 @@ describe('Address', () => {
     context('when `address` is invalid', () => {
       let address, expectionFunction
 
-      before(async () => {
+      before(() => {
         address = AddressMock
           .getMock({
             street_name: null

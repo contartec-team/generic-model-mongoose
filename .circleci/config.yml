@@ -72,7 +72,7 @@ jobs:
           command : npm run test
           environment :
             LOCAL_PORT        : 3000
-            MONGODB_URL_TEST  : mongodb://localhost:27017/contartec-test
+            MONGODB_URL_TEST  : mongodb://localhost:27017/generic-model-mongoose
 
       - store_artifacts:
           path    : test-results.xml
